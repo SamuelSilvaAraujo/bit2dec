@@ -1,0 +1,21 @@
+<head>
+    <title>Bin2Dec</title>
+</head>
+
+<body>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{form.bin_number}}
+            {% for erro in form.bin_number.errors  %}
+              <p>{{erro}}</p>
+            {% endfor %}
+
+            <button type="submit">Converter</button>
+        </form>
+    </div>
+
+    <div>
+        <input type="number" name="dec_number" value="{{dec_number}}" disabled>
+    </div>
+</body>
